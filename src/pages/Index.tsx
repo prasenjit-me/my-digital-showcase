@@ -1,7 +1,6 @@
 import ProfileSidebar from "@/components/ProfileSidebar";
 import HeroSection from "@/components/HeroSection";
 import ProjectCard from "@/components/ProjectCard";
-import OtherProjectCard from "@/components/OtherProjectCard";
 import AboutSection from "@/components/AboutSection";
 
 import projectWebapp from "@/assets/project-webapp.jpg";
@@ -10,7 +9,7 @@ import projectAiAgent from "@/assets/project-ai-agent.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectAiDocs from "@/assets/project-ai-docs.jpg";
 
-const featuredProjects = [
+const projects = [
   {
     title: "Analytics Dashboard Platform",
     description:
@@ -50,20 +49,31 @@ const featuredProjects = [
       { label: "CSAT score", value: "94%" },
     ],
   },
-];
-
-const otherProjects = [
   {
     title: "E-Commerce Platform",
     description:
       "A modern e-commerce platform with product management, payments integration, and inventory tracking built for a retail startup.",
     image: projectEcommerce,
+    category: "Website",
+    year: "2023",
+    stats: [
+      { label: "Conversion rate", value: "+35%" },
+      { label: "Products", value: "2K+" },
+      { label: "Monthly orders", value: "8K+" },
+    ],
   },
   {
     title: "AI Document Analyzer",
     description:
       "An AI-powered tool that extracts, summarizes, and organizes information from PDFs and documents automatically.",
     image: projectAiDocs,
+    category: "AI Agent",
+    year: "2023",
+    stats: [
+      { label: "Accuracy", value: "96%" },
+      { label: "Docs processed", value: "1M+" },
+      { label: "Time saved", value: "80%" },
+    ],
   },
 ];
 
@@ -75,21 +85,11 @@ const Index = () => {
       <main className="flex-1 max-w-4xl mx-auto px-6 sm:px-10 py-10">
         <HeroSection />
 
-        {/* Featured Projects */}
+        {/* Projects */}
         <section id="portfolio">
           <div className="space-y-14">
-            {featuredProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
-        </section>
-
-        {/* Other Projects */}
-        <section className="mt-16">
-          <h2 className="text-xl font-semibold text-foreground mb-8">Other projects</h2>
-          <div className="grid gap-10 sm:grid-cols-2">
-            {otherProjects.map((project) => (
-              <OtherProjectCard key={project.title} {...project} />
             ))}
           </div>
         </section>
