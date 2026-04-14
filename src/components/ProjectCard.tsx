@@ -1,13 +1,18 @@
+import { useState } from "react";
+
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  video?: string;
   category: string;
   year: string;
   stats?: { label: string; value: string }[];
 }
 
-const ProjectCard = ({ title, description, image, category, year, stats }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, video, category, year, stats }: ProjectCardProps) => {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <div className="group animate-fade-in">
       {/* Meta */}
@@ -25,16 +30,47 @@ const ProjectCard = ({ title, description, image, category, year, stats }: Proje
         {description}
       </p>
 
-      {/* Large image showcase */}
-      <div className="rounded-xl overflow-hidden border border-border bg-muted/30">
-        <img
-          src={image}
-          alt={title}
-          className="w-full aspect-[16/10] object-cover group-hover:scale-[1.015] transition-transform duration-500"
-          loading="lazy"
-          width={1200}
-          height={750}
-        />
+      {/* Media showcase */}
+      <div className="rounded-xl overflow-hidden border border-border bg-muted/30 relative">
+        {video && showVideo ? (
+          <video
+            src={video}
+            className="w-full aspect-[16/10] object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className="w-full aspect-[16/10] object-cover group-hover:scale-[1.015] transition-transform duration-500"
+            loading="lazy"
+            width={1920}
+            height={1200}
+          />
+        )}
+
+        {/* Play / Pause toggle */}
+        {video && (
+          <button
+            onClick={() => setShowVideo(!showVideo)}
+            className="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm border border-border text-xs font-medium text-foreground hover:bg-background transition-colors"
+          >
+            {showVideo ? (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="4" x2="9" y2="20"/></svg>
+                Image
+              </>
+            ) : (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Video
+              </>
+            )}
+          </button>
+        )}
       </div>
 
       {/* Stats below image */}

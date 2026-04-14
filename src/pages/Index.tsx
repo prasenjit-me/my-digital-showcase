@@ -9,12 +9,19 @@ import projectAiAgent from "@/assets/project-ai-agent.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectAiDocs from "@/assets/project-ai-docs.jpg";
 
+import projectWebappVideo from "@/assets/project-webapp-video.mp4.asset.json";
+import projectMobileAppVideo from "@/assets/project-mobile-app-video.mp4.asset.json";
+import projectAiAgentVideo from "@/assets/project-ai-agent-video.mp4.asset.json";
+import projectEcommerceVideo from "@/assets/project-ecommerce-video.mp4.asset.json";
+import projectAiDocsVideo from "@/assets/project-ai-docs-video.mp4.asset.json";
+
 const projects = [
   {
     title: "Analytics Dashboard Platform",
     description:
       "Built a real-time analytics dashboard for a SaaS company, featuring interactive charts, data tables, and role-based access control. Reduced client reporting time by 60%.",
     image: projectWebapp,
+    video: projectWebappVideo.url,
     category: "Website",
     year: "2024",
     stats: [
@@ -28,6 +35,7 @@ const projects = [
     description:
       "Designed and developed a cross-platform mobile app for tracking workouts, nutrition, and health metrics. Integrated with wearable devices for real-time syncing.",
     image: projectMobileApp,
+    video: projectMobileAppVideo.url,
     category: "Mobile App",
     year: "2024",
     stats: [
@@ -41,6 +49,7 @@ const projects = [
     description:
       "Created an AI-powered conversational agent that handles customer inquiries, integrates with CRM tools, and escalates complex issues to human agents seamlessly.",
     image: projectAiAgent,
+    video: projectAiAgentVideo.url,
     category: "AI Agent",
     year: "2023",
     stats: [
@@ -54,6 +63,7 @@ const projects = [
     description:
       "A modern e-commerce platform with product management, payments integration, and inventory tracking built for a retail startup.",
     image: projectEcommerce,
+    video: projectEcommerceVideo.url,
     category: "Website",
     year: "2023",
     stats: [
@@ -67,6 +77,7 @@ const projects = [
     description:
       "An AI-powered tool that extracts, summarizes, and organizes information from PDFs and documents automatically.",
     image: projectAiDocs,
+    video: projectAiDocsVideo.url,
     category: "AI Agent",
     year: "2023",
     stats: [
