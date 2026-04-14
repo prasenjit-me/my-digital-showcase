@@ -18,10 +18,10 @@ const projects = [
     description:
       "Developed and deployed conversational AI agents for two US brands — DAX Hair Care (a grooming products brand) and AMBEST (America's Best Travel Centers, 500+ truck stop network). Each agent handles product and service inquiries, resolves FAQs, and surfaces relevant information instantly. Reduced reliance on human support staff while keeping the customer experience fast and on-brand.",
     image: projectAiAgent,
-    video: `${b}dax_ai_agent.mp4`,
+    video: "https://github.com/prasenjit-me/portfolio/releases/download/v1.0/dax_ai_agent.mp4",
     mobileScreens: [`${b}ambest-demo.mp4`, `${b}ambest-screen2.png`],
     tabletScreens: [`${b}ambest-tablet.png`],
-    category: "AI Agent",
+    category: "AI Agent + Website",
     year: "2023",
     link: "https://www.daxhaircare.com/",
   },
@@ -52,7 +52,7 @@ const projects = [
     description:
       "Built the full EdGuru India platform — an online private tutoring marketplace that connects students with verified, experienced tutors for live 1-on-1 classes. Supports K-12 and graduation levels across all major boards (CBSE, ICSE, IB, IGCSE). Includes separate student and teacher portals, tutor profile management, slot scheduling, a built-in LMS for teachers, and demo class booking — eliminating admin overhead for tutors while giving students personalised learning.",
     image: projectAiDocs,
-    laptopVideo: `${b}edguruindia.mp4#t=9`,
+    laptopVideo: "https://github.com/prasenjit-me/portfolio/releases/download/v1.0/edguruindia.mp4#t=9",
     mobileScreens: [`${b}edguru-mobile.png`],
     tabletScreens: [`${b}edguru-tablet.png`],
     category: "Education Platform",
