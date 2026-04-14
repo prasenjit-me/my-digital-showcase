@@ -18,7 +18,7 @@ const projects = [
     description:
       "Developed and deployed conversational AI agents for two US brands — DAX Hair Care (a grooming products brand) and AMBEST (America's Best Travel Centers, 500+ truck stop network). Each agent handles product and service inquiries, resolves FAQs, and surfaces relevant information instantly. Reduced reliance on human support staff while keeping the customer experience fast and on-brand.",
     image: projectAiAgent,
-    video: "https://github.com/prasenjit-me/portfolio/releases/download/v1.0/dax_ai_agent.mp4",
+    laptopVideo: "https://github.com/prasenjit-me/portfolio/releases/download/v1.0/dax_ai_agent.mp4",
     mobileScreens: [`${b}ambest-demo.mp4`, `${b}ambest-screen2.png`],
     tabletScreens: [`${b}ambest-tablet.png`],
     category: "AI Agent + Website",
