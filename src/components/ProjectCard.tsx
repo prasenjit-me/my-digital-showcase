@@ -1,90 +1,145 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { X, ExternalLink } from "lucide-react";
+import DeviceShowcase, { DeviceClickPayload } from "@/components/DeviceShowcase";
+import LaptopFrame from "@/components/LaptopFrame";
+import PhoneFrame from "@/components/PhoneFrame";
+import TabletFrame from "@/components/TabletFrame";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   video?: string;
+  laptopVideo?: string;
+  mobileScreens?: string[];
+  tabletScreens?: string[];
   category: string;
   year: string;
-  stats?: { label: string; value: string }[];
+  link?: string;
 }
 
-const ProjectCard = ({ title, description, image, video, category, year, stats }: ProjectCardProps) => {
-  const [showVideo, setShowVideo] = useState(false);
+const POPUP_MAX_WIDTH: Record<string, string> = {
+  laptop: "min(860px, 92vw)",
+  tablet: "min(620px, 92vw)",
+  mobile: "min(300px, 80vw)",
+};
+
+const PopupMedia = ({ payload, title }: { payload: DeviceClickPayload; title: string }) => {
+  const { src, isVideo, useFrame, deviceType } = payload;
+
+  const media = isVideo ? (
+    <video src={src} className="w-full h-full object-contain bg-black" autoPlay loop muted playsInline />
+  ) : (
+    <img src={src} alt={title} className="w-full h-full object-cover object-top" loading="lazy" />
+  );
+
+  if (deviceType === "laptop" && !useFrame) {
+    return (
+      <div className="rounded-2xl overflow-hidden shadow-2xl">
+        <video src={src} className="w-full aspect-[16/9] object-cover" autoPlay loop muted playsInline />
+      </div>
+    );
+  }
+  if (deviceType === "laptop") return <LaptopFrame>{media}</LaptopFrame>;
+  if (deviceType === "mobile") return <PhoneFrame>{media}</PhoneFrame>;
+  return <TabletFrame>{media}</TabletFrame>;
+};
+
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  video,
+  laptopVideo,
+  mobileScreens = [],
+  tabletScreens = [],
+  category,
+  year,
+  link,
+}: ProjectCardProps) => {
+  const [selected, setSelected] = useState<DeviceClickPayload | null>(null);
+
+  useEffect(() => {
+    if (!selected) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [selected]);
 
   return (
-    <div className="group animate-fade-in">
-      {/* Meta */}
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-badge-bg text-badge-text">
-          {category}
-        </span>
-        <span className="text-xs text-muted-foreground">{year}</span>
-      </div>
+    <article className="mb-24 animate-fade-in">
 
-      <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-hero-highlight transition-colors">
-        {title}
-      </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4 max-w-2xl">
-        {description}
-      </p>
-
-      {/* Media showcase */}
-      <div className="rounded-xl overflow-hidden border border-border bg-muted/30 relative">
-        {video && showVideo ? (
-          <video
-            src={video}
-            className="w-full aspect-[16/10] object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : (
-          <img
-            src={image}
-            alt={title}
-            className="w-full aspect-[16/10] object-cover group-hover:scale-[1.015] transition-transform duration-500"
-            loading="lazy"
-            width={1920}
-            height={1200}
-          />
-        )}
-
-        {/* Play / Pause toggle */}
-        {video && (
+      {/* ── Popup ── */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-sm animate-in fade-in zoom-in-95 duration-200"
+          onClick={() => setSelected(null)}
+        >
+          {/* Close */}
           <button
-            onClick={() => setShowVideo(!showVideo)}
-            className="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm border border-border text-xs font-medium text-foreground hover:bg-background transition-colors"
+            className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full bg-black/8 hover:bg-black/15 text-foreground transition-colors z-10"
+            onClick={() => setSelected(null)}
           >
-            {showVideo ? (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="4" x2="9" y2="20"/></svg>
-                Image
-              </>
-            ) : (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Video
-              </>
-            )}
+            <X className="w-4 h-4" />
           </button>
-        )}
-      </div>
 
-      {/* Stats below image */}
-      {stats && stats.length > 0 && (
-        <div className="flex flex-wrap gap-6 mt-4">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-lg font-semibold text-foreground">{stat.value}</p>
-              <p className="text-xs text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
+          {/* Device — centered, no 3D */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: POPUP_MAX_WIDTH[selected.deviceType],
+              filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.18))",
+            }}
+          >
+            <PopupMedia payload={selected} title={title} />
+          </div>
         </div>
       )}
-    </div>
+
+      {/* ── Card ── */}
+      <div className="flex flex-col gap-6">
+
+        {/* Text: category · year, title, description */}
+        <div className="flex flex-col max-w-2xl">
+          <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-4">
+            {category}
+          </span>
+          <h3 className="text-lg sm:text-xl leading-[1.25] text-foreground mb-3">
+            {title}
+          </h3>
+          <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+            {description}
+          </p>
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-hero-highlight transition-colors"
+            >
+              Visit Site
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+        </div>
+
+        {/* Devices: constrained below text */}
+        <div className="rounded-2xl bg-secondary/70 p-4 sm:p-6 hover:bg-secondary/90 transition-colors">
+          <DeviceShowcase
+            title={title}
+            image={image}
+            video={video}
+            laptopVideo={laptopVideo}
+            mobileScreens={mobileScreens}
+            tabletScreens={tabletScreens}
+            onDeviceClick={setSelected}
+          />
+        </div>
+
+      </div>
+    </article>
   );
 };
 
