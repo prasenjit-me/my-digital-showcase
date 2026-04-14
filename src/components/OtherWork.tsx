@@ -2,11 +2,13 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import LaptopFrame from "@/components/LaptopFrame";
 
+const b = import.meta.env.BASE_URL;
+
 const items = [
-  { title: "School Management System", image: "/other-school-management.png", link: "" },
-  { title: "Swami Debananda Ashram", image: "/other-ashram.png", link: "https://sdashram.org/" },
-  { title: "Education Cube", image: "/other-education-cube.png", link: "https://education-cube.com/" },
-  { title: "Coding Avengers", image: "/other-codingavengers.png", link: "https://www.codingavengers.com/" },
+  { title: "School Management System", image: `${b}other-school-management.png`, link: "" },
+  { title: "Swami Debananda Ashram", image: `${b}other-ashram.png`, link: "https://sdashram.org/" },
+  { title: "Education Cube", image: `${b}other-education-cube.png`, link: "https://education-cube.com/" },
+  { title: "Coding Avengers", image: `${b}other-codingavengers.png`, link: "https://www.codingavengers.com/" },
 ];
 
 const OtherWork = () => {
