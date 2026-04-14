@@ -77,7 +77,7 @@ const Index = () => {
 
         {/* Featured Projects */}
         <section id="portfolio">
-          <div className="space-y-8">
+          <div className="space-y-14">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
