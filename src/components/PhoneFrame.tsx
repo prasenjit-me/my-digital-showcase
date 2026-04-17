@@ -15,17 +15,11 @@ const PhoneFrame = ({ children }: PhoneFrameProps) => {
 
       {/* Phone body */}
       <div
-        className="relative w-full rounded-[2rem] border-[5px] border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden"
+        className="relative w-full rounded-[1.2rem] border-[4px] border-zinc-800 bg-zinc-900 shadow-2xl overflow-hidden"
         style={{ aspectRatio: "9 / 19.5" }}
       >
-        {/* Dynamic island */}
-        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[30%] h-[3.5%] bg-zinc-900 border border-zinc-700 rounded-full z-20 flex items-center justify-center gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-zinc-700" />
-          <div className="w-[6px] h-[6px] rounded-full bg-zinc-700" />
-        </div>
-
         {/* Screen */}
-        <div className="absolute inset-0 overflow-hidden rounded-[1.6rem]">
+        <div className="absolute inset-0 overflow-hidden rounded-[0.9rem]">
           {children}
         </div>
 

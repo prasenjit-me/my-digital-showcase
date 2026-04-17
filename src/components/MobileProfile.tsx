@@ -13,7 +13,14 @@ const GitHubIcon = () => (
   </svg>
 );
 
-const skills = ["React", "Laravel", "Node.js", "TypeScript", "AI / ML", "Mobile"];
+const skills = [
+  "Website Design & Development",
+  "Shopify Development",
+  "WordPress Development",
+  "Mobile App Development",
+  "AI Agent Development",
+  "Chrome Extension Development",
+];
 
 const MobileProfile = () => {
   return (

@@ -13,7 +13,14 @@ const GitHubIcon = () => (
   </svg>
 );
 
-const skills = ["React", "Laravel", "Node.js", "TypeScript", "AI / ML", "Mobile"];
+const skills = [
+  "Website Design & Development",
+  "Shopify Development",
+  "WordPress Development",
+  "Mobile App Development",
+  "AI Agent Development",
+  "Chrome Extension Development",
+];
 
 const ProfileSidebar = () => {
   return (
@@ -49,7 +56,7 @@ const ProfileSidebar = () => {
 
       {/* Skills */}
       <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mb-3">Stack</p>
-      <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 mb-6">
+      <div className="flex flex-col gap-1.5 mb-6">
         {skills.map((skill) => (
           <div key={skill} className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-muted-foreground/40" />
