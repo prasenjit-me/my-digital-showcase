@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center gap-5 text-sm">
           <span className="text-muted-foreground hidden md:block">prasenjitdutta198@gmail.com</span>
           <a
-            href="/resume.pdf"
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-hero-highlight transition-colors"
