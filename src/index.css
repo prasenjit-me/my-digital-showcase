@@ -174,6 +174,18 @@
     color: hsl(var(--hero-highlight));
   }
 
+  /* Website screenshot scroll-pan: pans from top to bottom on card hover */
+  .screenshot-pan {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 0%;
+    transition: background-position 3s ease-in-out;
+  }
+
+  .group:hover .screenshot-pan {
+    background-position: 0 100%;
+  }
+
   /* Framer-style variable font weight utilities */
   .font-thin-var    { font-variation-settings: "wght" 100, "opsz" 32; font-weight: 100; }
   .font-light-var   { font-variation-settings: "wght" 300, "opsz" 32; font-weight: 300; }

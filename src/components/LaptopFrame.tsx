@@ -20,7 +20,7 @@ const LaptopFrame = ({ children }: LaptopFrameProps) => {
 
           {/* Screen glass */}
           <div
-            className="w-full overflow-hidden rounded-sm"
+            className="relative w-full overflow-hidden rounded-sm"
             style={{ aspectRatio: "16/9" }}
           >
             {children}

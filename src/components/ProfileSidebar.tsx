@@ -13,13 +13,20 @@ const GitHubIcon = () => (
   </svg>
 );
 
-const skills = [
+const services = [
   "Website Design & Development",
-  "Shopify Development",
-  "WordPress Development",
   "Mobile App Development",
   "AI Agent Development",
+  "Shopify Development",
+  "WordPress Development",
   "Chrome Extension Development",
+];
+
+const techStack = [
+  "React / TypeScript",
+  "Laravel / Node.js",
+  "React Native",
+  "PostgreSQL / MySQL",
 ];
 
 const ProfileSidebar = () => {
@@ -54,13 +61,24 @@ const ProfileSidebar = () => {
         <span className="text-xs text-muted-foreground">Open to Work</span>
       </div>
 
-      {/* Skills */}
+      {/* Services */}
+      <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mb-3">Services</p>
+      <div className="flex flex-col gap-1.5 mb-5">
+        {services.map((s) => (
+          <div key={s} className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-muted-foreground/40" />
+            <span className="text-xs text-foreground">{s}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Tech Stack */}
       <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mb-3">Stack</p>
       <div className="flex flex-col gap-1.5 mb-6">
-        {skills.map((skill) => (
-          <div key={skill} className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-muted-foreground/40" />
-            <span className="text-xs text-foreground">{skill}</span>
+        {techStack.map((t) => (
+          <div key={t} className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-hero-highlight/60" />
+            <span className="text-xs text-foreground">{t}</span>
           </div>
         ))}
       </div>

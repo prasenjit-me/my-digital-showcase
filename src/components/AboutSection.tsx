@@ -118,30 +118,30 @@ const AboutSection = () => {
 
       <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
         <p>
-          I'm a passionate Software Developer with 5 years of hands-on experience building full-stack
-          web applications, cross-platform mobile apps, and AI-powered solutions. I specialise in
-          scalable backend architectures, real-time integrations, and delivering products that are
-          both technically sound and genuinely useful.
+          Over the last 5 years I've shipped full-stack products across logistics, education,
+          e-commerce, and AI — for clients in the US and India. I work across the entire stack:
+          React and TypeScript on the frontend, Laravel and Node.js on the backend, React Native
+          for mobile, and increasingly AI agents for automation and support.
         </p>
         <p>
-          Over the years I've worked across a range of industries — from insurance and logistics to
-          education and e-commerce — designing and shipping end-to-end platforms for clients in the US
-          and India. My stack spans React, Laravel, Node.js, and TypeScript on the frontend and backend,
-          with growing expertise in AI agent development and mobile (React Native).
+          I've designed and delivered end-to-end platforms — from the database schema and API layer
+          to the customer-facing UI — across industries like logistics, ed-tech, alcohol delivery,
+          and grooming. Most projects I've shipped solo, which means I own the decisions and the
+          delivery, without the overhead of a larger team.
         </p>
         <p>
-          I care deeply about clean architecture, developer experience, and building software that
-          scales without becoming a maintenance burden. Whether it's a customer-facing product or an
-          internal tool, I bring the same level of craft and attention to detail to every project.
+          I care about clean architecture and software that doesn't become a maintenance burden six
+          months later. Whether it's a customer-facing product or an internal admin tool, the
+          standard of craft stays the same.
         </p>
         <p>
-          I'm currently open to new opportunities — freelance, contract, or full-time — where I can
-          contribute to a product that matters and work alongside people who take their craft seriously.
+          I'm currently open to freelance, contract, and full-time work — particularly on products
+          where the engineering decisions actually matter.
         </p>
       </div>
 
       {/* Contact */}
-      <div className="mt-14">
+      <div id="contact" className="mt-14">
         <div className="mb-8">
           <h3 className="text-2xl sm:text-3xl leading-[1.15] text-foreground mb-2">
             Let's build something together

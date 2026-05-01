@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import AboutSection from "@/components/AboutSection";
 import OtherWork from "@/components/OtherWork";
 import MobileProfile from "@/components/MobileProfile";
+import ProcessSection from "@/components/ProcessSection";
 
 import projectAiAgent from "@/assets/project-ai-agent.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
@@ -16,7 +17,7 @@ const projects = [
   {
     title: "DAX Hair Care — AI Support Agent",
     description:
-      "Developed and deployed conversational AI agents for two US brands — DAX Hair Care (a grooming products brand) and AMBEST (America's Best Travel Centers, 500+ truck stop network). Each agent handles product and service inquiries, resolves FAQs, and surfaces relevant information instantly. Reduced reliance on human support staff while keeping the customer experience fast and on-brand.",
+      "Deployed conversational AI agents for two US brands — DAX Hair Care (grooming products) and AMBEST (500-location travel center network). Each agent handles product inquiries, resolves FAQs, and surfaces information instantly — cutting response times and reducing dependence on support staff. Built end-to-end: agent design, training, and production integration on both live brand sites.",
     image: projectAiAgent,
     laptopVideo: "https://github.com/prasenjit-me/portfolio/releases/download/v1.0/dax_ai_agent.mp4",
     mobileScreens: [`${b}ambest-demo.mp4`, `${b}ambest-screen2.png`],
@@ -24,11 +25,12 @@ const projects = [
     category: "AI Agent + Website",
     year: "2023",
     link: "https://www.daxhaircare.com/",
+    tech: ["React", "Node.js", "OpenAI", "LangChain", "PostgreSQL"],
   },
   {
     title: "AMBEST — Member Operator Admin Platform",
     description:
-      "Built a full-stack admin platform for AMBEST (America's Best Travel Centers), a member-owned network of 500+ independent truck stops across the US. The platform lets member operators manage their location profiles, amenities, promotions, and service listings. Includes a mobile admin panel for on-the-go management and a tablet-optimised dashboard — giving independent truck stop owners the tools to stay current across the AMBEST network.",
+      "Full-stack admin platform for AMBEST's 500+ independent truck stop operators across the US. Operators manage location profiles, amenities, promotions, and service listings — from a responsive web dashboard, a mobile admin panel, or a tablet-optimised view. Built solo, end-to-end: API layer, web and mobile admin surfaces, and deployment.",
     image: projectEcommerce,
     laptopVideo: `${b}ambest-laptop.mp4`,
     mobileScreens: [`${b}ambest-mobile-admin.mp4`],
@@ -36,21 +38,23 @@ const projects = [
     category: "Website",
     year: "2023",
     link: "https://am-best.com/",
+    tech: ["React", "Laravel", "MySQL", "REST API"],
   },
   {
     title: "BeerGo — Alcohol Delivery Platform",
     description:
-      "Designed and built a full-stack alcohol delivery platform with a marketing website and a cross-platform mobile app. Features include cart management, multiple payment methods, real-time delivery tracking, and age verification.",
+      "Full-stack alcohol delivery platform — marketing website plus a cross-platform mobile app (iOS & Android). Built with cart management, multiple payment methods, real-time delivery tracking, and age verification. Covers the complete customer journey from product discovery to doorstep delivery.",
     image: `${b}beergo-laptop.png`,
     mobileScreens: [`${b}beergo-mobile1.jpeg`, `${b}beergo-mobile2.jpeg`, `${b}beergo-mobile3.jpeg`],
     category: "Website + Mobile App",
     year: "2024",
     link: "https://beergo.in/",
+    tech: ["React Native", "React", "Laravel", "Stripe", "MySQL"],
   },
   {
     title: "EdGuru India — Online Tutoring Platform",
     description:
-      "Built the full EdGuru India platform — an online private tutoring marketplace that connects students with verified, experienced tutors for live 1-on-1 classes. Supports K-12 and graduation levels across all major boards (CBSE, ICSE, IB, IGCSE). Includes separate student and teacher portals, tutor profile management, slot scheduling, a built-in LMS for teachers, and demo class booking — eliminating admin overhead for tutors while giving students personalised learning.",
+      "Built the complete EdGuru India platform from scratch — an online tutoring marketplace connecting students with verified tutors for live 1-on-1 classes. Supports K–12 across CBSE, ICSE, IB, and IGCSE boards. Includes separate student and teacher portals, tutor profile management, slot scheduling, a built-in LMS, and demo class booking. Delivered end-to-end: product design, full-stack development, and deployment.",
     image: projectAiDocs,
     laptopVideo: "https://github.com/prasenjit-me/portfolio/releases/download/v1.0/edguruindia.mp4#t=9",
     mobileScreens: [`${b}edguru-mobile.png`],
@@ -58,6 +62,7 @@ const projects = [
     category: "Education Platform",
     year: "2023",
     link: "https://edguruindia.com/",
+    tech: ["React", "Laravel", "React Native", "MySQL", "WebRTC"],
   },
 ];
 
@@ -80,6 +85,8 @@ const Index = () => {
           </section>
 
           <OtherWork />
+
+          <ProcessSection />
 
           <AboutSection />
         </main>

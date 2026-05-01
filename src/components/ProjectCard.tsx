@@ -16,6 +16,7 @@ interface ProjectCardProps {
   category: string;
   year: string;
   link?: string;
+  tech?: string[];
 }
 
 const POPUP_MAX_WIDTH: Record<string, string> = {
@@ -56,6 +57,7 @@ const ProjectCard = ({
   category,
   year,
   link,
+  tech = [],
 }: ProjectCardProps) => {
   const [selected, setSelected] = useState<DeviceClickPayload | null>(null);
 
@@ -104,7 +106,7 @@ const ProjectCard = ({
         {/* Text: category · year, title, description */}
         <div className="flex flex-col max-w-2xl">
           <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-4">
-            {category}
+            {category} · {year}
           </span>
           <h3 className="text-lg sm:text-xl leading-[1.25] text-foreground mb-3">
             {title}
@@ -112,6 +114,20 @@ const ProjectCard = ({
           <p className="text-xs text-muted-foreground leading-relaxed mb-4">
             {description}
           </p>
+
+          {tech.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-4">
+              {tech.map((t) => (
+                <span
+                  key={t}
+                  className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-secondary text-muted-foreground border border-border"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+
           {link && (
             <a
               href={link}

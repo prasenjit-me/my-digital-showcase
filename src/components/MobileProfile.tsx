@@ -13,13 +13,20 @@ const GitHubIcon = () => (
   </svg>
 );
 
-const skills = [
-  "Website Design & Development",
-  "Shopify Development",
-  "WordPress Development",
-  "Mobile App Development",
-  "AI Agent Development",
-  "Chrome Extension Development",
+const services = [
+  "Website Dev",
+  "Mobile App Dev",
+  "AI Agents",
+  "Shopify",
+  "WordPress",
+  "Chrome Extensions",
+];
+
+const techStack = [
+  "React / TypeScript",
+  "Laravel / Node.js",
+  "React Native",
+  "PostgreSQL / MySQL",
 ];
 
 const MobileProfile = () => {
@@ -57,14 +64,26 @@ const MobileProfile = () => {
         </a>
       </div>
 
-      {/* Skills */}
-      <div className="flex flex-wrap gap-1.5 mb-4">
-        {skills.map((skill) => (
+      {/* Services */}
+      <div className="flex flex-wrap gap-1.5 mb-2">
+        {services.map((s) => (
           <span
-            key={skill}
+            key={s}
             className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-background text-foreground border border-border"
           >
-            {skill}
+            {s}
+          </span>
+        ))}
+      </div>
+
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-1.5 mb-4">
+        {techStack.map((t) => (
+          <span
+            key={t}
+            className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-hero-highlight/10 text-hero-highlight border border-hero-highlight/20"
+          >
+            {t}
           </span>
         ))}
       </div>

@@ -14,14 +14,14 @@ const HeroSection = () => {
   return (
     <section className="mb-14 animate-fade-in">
       <h1 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.15] text-foreground mb-8 max-w-2xl">
-        <span className="text-hero-highlight">Software Developer</span>{" "}
-        building websites, mobile apps & AI agents that solve real problems
+        <span className="text-hero-highlight">Freelance full-stack developer</span>{" "}
+        with 5 years shipping web apps, mobile & AI products — end-to-end, from day one to launch
       </h1>
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 rounded-full bg-primary" />
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm font-medium text-foreground">Currently available to work</span>
           </div>
           <p className="text-sm text-muted-foreground">
@@ -29,7 +29,13 @@ const HeroSection = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 flex-wrap">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-foreground text-background text-sm font-semibold hover:opacity-85 transition-opacity"
+          >
+            Start a project →
+          </a>
           <a
             href="https://www.linkedin.com/in/prasenjit-dutta-b35947169/"
             target="_blank"
