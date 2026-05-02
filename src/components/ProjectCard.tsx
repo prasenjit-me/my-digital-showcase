@@ -14,7 +14,6 @@ interface ProjectCardProps {
   mobileScreens?: string[];
   tabletScreens?: string[];
   category: string;
-  year: string;
   link?: string;
   tech?: string[];
 }
@@ -55,7 +54,6 @@ const ProjectCard = ({
   mobileScreens = [],
   tabletScreens = [],
   category,
-  year,
   link,
   tech = [],
 }: ProjectCardProps) => {
@@ -103,10 +101,9 @@ const ProjectCard = ({
       {/* ── Card ── */}
       <div className="flex flex-col gap-6">
 
-        {/* Text: category · year, title, description */}
         <div className="flex flex-col max-w-2xl">
           <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-4">
-            {category} · {year}
+            {category}
           </span>
           <h3 className="text-lg sm:text-xl leading-[1.25] text-foreground mb-3">
             {title}

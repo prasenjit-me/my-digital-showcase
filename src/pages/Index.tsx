@@ -23,7 +23,7 @@ const projects = [
     mobileScreens: [`${b}ambest-demo.mp4`, `${b}ambest-screen2.png`],
     tabletScreens: [`${b}ambest-tablet.png`],
     category: "AI Agent + Website",
-    year: "2023",
+
     link: "https://www.daxhaircare.com/",
     tech: ["React", "Node.js", "OpenAI", "LangChain", "PostgreSQL"],
   },
@@ -36,7 +36,7 @@ const projects = [
     mobileScreens: [`${b}ambest-mobile-admin.mp4`],
     tabletScreens: [`${b}ambest-tablet2.png`],
     category: "Website",
-    year: "2023",
+
     link: "https://am-best.com/",
     tech: ["React", "Laravel", "MySQL", "REST API"],
   },
@@ -47,7 +47,7 @@ const projects = [
     image: `${b}beergo-laptop.png`,
     mobileScreens: [`${b}beergo-mobile1.jpeg`, `${b}beergo-mobile2.jpeg`, `${b}beergo-mobile3.jpeg`],
     category: "Website + Mobile App",
-    year: "2024",
+
     link: "https://beergo.in/",
     tech: ["React Native", "React", "Laravel", "Stripe", "MySQL"],
   },
@@ -60,7 +60,7 @@ const projects = [
     mobileScreens: [`${b}edguru-mobile.png`],
     tabletScreens: [`${b}edguru-tablet.png`],
     category: "Education Platform",
-    year: "2023",
+
     link: "https://edguruindia.com/",
     tech: ["React", "Laravel", "React Native", "MySQL", "WebRTC"],
   },
