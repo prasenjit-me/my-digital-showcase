@@ -9,11 +9,23 @@ import ProcessSection from "@/components/ProcessSection";
 
 import projectAiAgent from "@/assets/project-ai-agent.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
+import projectWebapp from "@/assets/project-webapp.jpg";
 import projectAiDocs from "@/assets/project-ai-docs.jpg";
 
 const b = import.meta.env.BASE_URL;
 
 const projects = [
+  {
+    title: "Ethnic Wear Brand — E-commerce Platform",
+    description:
+      "Built a full-featured e-commerce platform for an Indian ethnic wear brand — covering the complete customer journey from product discovery to checkout. Includes advanced filtering by category, colour, and size; a persistent shopping cart with real-time item management; and a fully integrated payment gateway for secure transactions. Delivered as a responsive, production-ready web storefront designed to handle a rich catalogue of traditional apparel across multiple collections.",
+    image: projectEcommerce,
+    laptopVideo: `${b}ethnic-wear-laptop.mp4`,
+    mobileScreens: [`${b}ethnic-wear-mobile.mp4`],
+    tabletScreens: [`${b}ethnic-wear-tablet.mp4`],
+    category: "E-commerce",
+    tech: ["React", "Laravel", "MySQL", "REST API"],
+  },
   {
     title: "DAX Hair Care — AI Support Agent",
     description:
@@ -31,7 +43,7 @@ const projects = [
     title: "AMBEST — Member Operator Admin Platform",
     description:
       "Full-stack admin platform for AMBEST's 500+ independent truck stop operators across the US. Operators manage location profiles, amenities, promotions, and service listings — from a responsive web dashboard, a mobile admin panel, or a tablet-optimised view. Built solo, end-to-end: API layer, web and mobile admin surfaces, and deployment.",
-    image: projectEcommerce,
+    image: projectWebapp,
     laptopVideo: `${b}ambest-laptop.mp4`,
     mobileScreens: [`${b}ambest-mobile-admin.mp4`],
     tabletScreens: [`${b}ambest-tablet2.png`],
